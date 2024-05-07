@@ -1,12 +1,16 @@
 // import { useState } from "react";
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "/vite.svg";
-import { Box } from "@mui/material";
+import React from "react";
 import "./App.css";
 import HomePage from "./pages/components/HomePage";
 
 function App() {
   // const [count, setCount] = useState(0);
+  const items = ["NewYork", "Paris", "London", "Hanoi"];
+  const handleSelectItem = (item: string) => {
+    console.log(item);
+  };
 
   return (
     // <>
@@ -31,9 +35,21 @@ function App() {
     //     Click on the Vite and React logos to learn more
     //   </p>
     // </>
-    <Box>
-      <HomePage />
-    </Box>
+    <React.Fragment>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "4",
+        }}
+      >
+        <HomePage
+          items={items}
+          heading="Cities"
+          onSelectItem={handleSelectItem}
+        />
+      </div>
+    </React.Fragment>
   );
 }
 
