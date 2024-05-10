@@ -1,8 +1,7 @@
+import { ReactElement } from "react";
 import useCart from "../hooks/useCart";
 import useProducts from "../hooks/useProducts";
-import { UseProductsContextType } from "../context/ProductsProvider";
 import Product from "./Product";
-import { ReactElement } from "react";
 const ProductList = () => {
   const { dispatch, REDUCER_ACTIONS, cart } = useCart();
   const { products } = useProducts();
